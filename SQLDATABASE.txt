@@ -1,0 +1,69 @@
+-- Create Categories Table
+CREATE TABLE categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+-- Create Menu Items Table
+CREATE TABLE menu_items (
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2) NOT NULL,
+    category_id INT,
+    image VARCHAR(255),
+    featured BOOLEAN DEFAULT 0
+);
+
+-- Create Users Table
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100),
+    role VARCHAR(20) DEFAULT 'staff'
+);
+
+-- Create Reservations Table
+CREATE TABLE reservations (
+    reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    reservation_date DATE NOT NULL,
+    reservation_time TIME NOT NULL,
+    party_size INT NOT NULL,
+    special_requests TEXT,
+    status VARCHAR(20) DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Contact Messages Table
+CREATE TABLE contact_messages (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    subject VARCHAR(200),
+    message TEXT NOT NULL,
+    status VARCHAR(20) DEFAULT 'unread',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Add initial data to Categories
+INSERT INTO categories (name) VALUES 
+('Appetizers'), 
+('Main Course'), 
+('Desserts'), 
+('Beverages');
+
+-- Add initial Menu Items
+INSERT INTO menu_items (name, description, price, category_id, featured) VALUES
+('Garlic Bread', 'Freshly baked bread with garlic butter', 5.99, 1, 1),
+('Caesar Salad', 'Crisp romaine lettuce with our house dressing', 8.99, 1, 0),
+('Spaghetti Bolognese', 'Classic pasta with rich meat sauce', 14.99, 2, 1),
+('Tiramisu', 'Italian coffee-flavored dessert', 7.99, 3, 1),
+('Iced Tea', 'Freshly brewed and chilled', 3.99, 4, 0);
+
+-- Add an admin user (password should be hashed in a real application)
+INSERT INTO users (username, password, role) VALUES
+('admin', 'password123', 'admin');
