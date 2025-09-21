@@ -1,0 +1,380 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #6d6d6d;
+}
+
+/* Header */
+header {
+    background-image: url('../images/header.png');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 1rem;
+    text-shadow: 1px 1px 3px rgba(236, 0, 130, 0.8); /* This helps with text readability on the image */
+}
+
+/* You might want to add this to ensure text is readable over any image */
+.logo h1, nav a {
+    text-shadow: 2px 2px 4px rgba(255, 216, 232, 0.8);
+}
+
+.logo h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f6c5eb;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #f4f4f4;
+    margin-bottom: 30px;
+    background-image: url('../images/welcomeresturaunt.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffc4d7;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: #ff91b5;
+}
+
+/* Featured dishes */
+.featured h2, .menu-page h2, .reservation-page h2, .about-page h2, .contact-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f9a8cc;
+    display: inline-block;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.dish {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dish:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffb1cc;
+}
+
+.category {
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* Menu page */
+.menu-page {
+    padding: 30px 0;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.item-details h4 {
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #ffade1;
+}
+
+/* Reservation page */
+.reservation-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.reservation-form {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.reservation-info {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.reservation-info h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* About page */
+.about-page {
+    padding: 30px 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #777;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.about-text h3, .chef-section h3, .testimonials h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.chef-info {
+    display: flex;
+    gap: 30px;
+}
+
+.chef-image {
+    flex: 1;
+}
+
+.chef-bio {
+    flex: 2;
+}
+
+.testimonials {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.customer {
+    display: block;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Contact page */
+.contact-page {
+    padding: 30px 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-info h3, .contact-form-container h3, .map-container h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.map-container {
+    margin-top: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ffa4ce;
+    color: #ffffff;
+    margin-top: 30px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .about-content, .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chef-info {
+        flex-direction: column;
+    }
+    
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}
